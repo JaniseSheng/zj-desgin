@@ -1,0 +1,9 @@
+解压ZIP文件：你自己的盘符路径\spring-cloud-iphone-1.0-SNAPSHOT-release\spring-cloud-iphone-1.0-SNAPSHOT\bin
+在BIN目录下:
+1、windows运行：spring-cloud-iphone.bat start 
+                如果拒绝访问，运行：spring-cloud-iphone.bat console
+                然后项目会自动启动，最后打印的日志为：jvm 1    | 2017-10-07 22:39:48.385  INFO 16452 --- [erSimpleAppMain] com.iphone.Application                   : Started Application in 8.03 seconds (JVM running for 10.068)即表示启动成功。
+停止服务关闭DOS窗口即可。
+
+linux运行：
+./spring-cloud-iphone start 和 ./spring-cloud-iphone stop 启动和停止服务

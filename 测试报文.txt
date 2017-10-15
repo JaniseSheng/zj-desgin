@@ -1,0 +1,238 @@
+热点服务，提交订单，关键字查询（模糊查询）：
+URL---http://127.0.0.1:8080/iphone/hotservice
+request:
+{
+  "pageSize": "1",
+  "currentIndex": "1",
+  "keywords": "100"
+}
+
+response:
+{
+    "serviceList": [
+        {
+            "serviceId": "#1001#",
+            "serviceClassifyId": "1",
+            "serviceName": "Carrier Checker 完全策略信息有锁无锁 查运营商 快",
+            "serviceCost": 5,
+            "serviceContent": "老外工作时间大致是我们这边下午1点到晚上11-12点，这段时间可以快出，基本1小时内，最多三小时，1-3小时是指老外上班时间",
+            "serviceRemark": "1~3小时",
+            "servicePriceTrend": "1",
+            "serviceDemandTrend": "0",
+            "serviceClassify": {
+                "serviceClassifyId": null,
+                "serviceClassifyName": "INFO Checks 查询服务"
+            }
+        }
+    ]
+}
+
+
+历史订单查询、历史订单通过IMEI查询
+URL---http://127.0.0.1:8080/iphone/historyorderquery
+request:
+{
+  "pageSize": "3",
+  "currentIndex": "1",
+  "orderStatus": "2",
+  "imei": "35437606170185I"
+}
+
+response:
+{
+    "ordersList": [
+        {
+            "orderId": "ip170515013423103418",
+            "orderDate": 1506922463000,
+            "userId": "65624910",
+            "serviceId": "#1002#",
+            "orderAmount": 5.01,
+            "orderStatus": "2",
+            "isPaid": "是",
+            "isReturn": "否",
+            "returnCompleteDate": null,
+            "returnAmount": null,
+            "orderStatusUpdatetime": null,
+            "orderStatusUpdateSource": null,
+            "imei": "35437606170185I",
+            "sn": null,
+            "model": null,
+            "orderResult": null,
+            "orderRemark": "88888888",
+            "service": {
+                "serviceId": null,
+                "serviceClassifyId": null,
+                "serviceName": "Carrier Checker 完全策略信息有锁无锁 查运营商 慢",
+                "serviceCost": null,
+                "serviceContent": null,
+                "serviceRemark": null,
+                "servicePriceTrend": null,
+                "serviceDemandTrend": null,
+                "serviceClassify": null
+            }
+        }
+    ]
+}
+
+交易记录查询
+http://127.0.0.1:8080/iphone/accountrecord
+request:
+{
+  "pageSize": "3",
+  "currentIndex": "1",
+  "account": "65624910",
+  "startOrderDate": "2017-10-01",
+  "endOrderDate": "2017-10-01"
+}
+
+response:
+{
+    "ordersList": [
+        {
+            "orderId": "ip170515013423103418",
+            "orderDate": 1506922463000,
+            "userId": "65624910",
+            "serviceId": "#1002#",
+            "orderAmount": 5.01,
+            "orderStatus": "2",
+            "isPaid": "是",
+            "isReturn": "否",
+            "returnCompleteDate": null,
+            "returnAmount": null,
+            "orderStatusUpdatetime": null,
+            "orderStatusUpdateSource": null,
+            "imei": "35437606170185I",
+            "sn": null,
+            "model": null,
+            "orderResult": null,
+            "orderRemark": "88888888",
+            "service": null
+        },
+        {
+            "orderId": "ip170515124055952342",
+            "orderDate": 1506832855000,
+            "userId": "65624910",
+            "serviceId": "#1002#",
+            "orderAmount": 5.01,
+            "orderStatus": "2",
+            "isPaid": "是",
+            "isReturn": "否",
+            "returnCompleteDate": null,
+            "returnAmount": null,
+            "orderStatusUpdatetime": null,
+            "orderStatusUpdateSource": null,
+            "imei": "35437606170185d",
+            "sn": null,
+            "model": null,
+            "orderResult": null,
+            "orderRemark": null,
+            "service": null
+        }
+    ]
+}
+
+个人资料修改
+http://127.0.0.1:8080/iphone/userchangepw
+request:
+{
+  "account": "65624910",
+  "oldPwd": "12345678A",
+  "newPwd": "123456",
+  "confirmPwd": "123456"
+}
+
+修改密码
+http://127.0.0.1:8080/iphone/userchangepw
+request:
+{
+  "account": "65624910",
+  "oldPwd": "12345678A",
+  "newPwd": "123456",
+  "confirmPwd": "123456"
+}
+
+充值记录、充值记录（支付方式）
+http://127.0.0.1:8080/iphone/rechargerecord
+request:
+{
+  "pageSize": "2",
+  "currentIndex": "1",
+  "account": "65624910",
+  "startOrderDate": "2017-10-01",
+  "endOrderDate": "2017-10-01",
+  "rechargeClassify": "alipay"
+}
+
+response:
+{
+    "paymentList": [
+        {
+            "rechargeId": 1,
+            "userRechargeDate": 1507225315000,
+            "rechargeValue": 100,
+            "userId": "65624910",
+            "userName": "Max",
+            "cellphone": null,
+            "rechargeSource": "alipay",
+            "rechargeStatus": "1",
+            "rechargeClassifyCode": "1",
+            "rechargeCompleteDate": 1507311779000,
+            "rechargeReturnByUser": null,
+            "rechargeRemark": "123"
+        }
+    ]
+}
+
+登录日志
+http://127.0.0.1:8080/iphone/loginlog
+request:
+{
+  "pageSize": "3",
+  "currentIndex": "1"
+}
+
+response:
+{
+    "loginLogList": [
+        {
+            "sid": 1,
+            "userId": "65624910",
+            "userName": "Max",
+            "ip": "123",
+            "mac": null,
+            "loginDate": 1494516136000,
+            "logoutDate": null
+        },
+        {
+            "sid": 2,
+            "userId": "65624910",
+            "userName": "Max",
+            "ip": "456",
+            "mac": null,
+            "loginDate": 1494518055000,
+            "logoutDate": null
+        },
+        {
+            "sid": 3,
+            "userId": "65624910",
+            "userName": "Max",
+            "ip": "777",
+            "mac": null,
+            "loginDate": 1494519227000,
+            "logoutDate": null
+        }
+    ]
+}
+
+用户登录：
+http://127.0.0.1:8080/iphone/userlogin
+request:
+{
+  "userName": "Max",
+  "loginPwd": "1234561"
+}
+
+response:
+{
+    "status": "failed"
+}
